@@ -4,9 +4,9 @@ import numpy as np
 def test_0():
     def f(y,x,grad):
         print(x)
-        y[0] = np.sqrt(x[1])
-        y[1] = (2*x[0] + 0)**3 - x[1]
-        y[2] = (-1*x[0] + -1)**3 - x[1]
+        y[0] = np.sqrt(x[1]) # objective function
+        y[1] = (2*x[0] + 0)**3 - x[1] # constraint 1
+        y[2] = (-1*x[0] + -1)**3 - x[1] # constraint 2
         if grad is not None:
             grad[0,0] = 0.0
             grad[1,0] = 0.5 / np.sqrt(x[1])
